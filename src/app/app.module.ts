@@ -11,6 +11,7 @@ import { ContactCreateComponent } from './contact-create/contact-create.componen
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { CoursesDetailComponent } from './courses-detail/courses-detail.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactModule } from './contact/contact.module';
 
 const routes: Routes = [
   {
@@ -20,10 +21,6 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
-    children: [
-      { path: '', component: ContactCreateComponent },
-      { path: 'detail', component: ContactDetailComponent },
-    ],
   },
   {
     path: 'about',
@@ -48,7 +45,7 @@ const routes: Routes = [
     ContactDetailComponent,
     CoursesDetailComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot(routes), ContactModule],
   providers: [],
   bootstrap: [AppComponent],
 })
