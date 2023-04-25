@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
+    children: [
+      { path: '', component: ContactCreateComponent },
+      { path: 'detail', component: ContactDetailComponent },
+    ],
   },
   {
     path: 'about',
